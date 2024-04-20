@@ -11,6 +11,7 @@ const requestWakeLock = async () => {
 
     wakeLock.addEventListener("release", () => {
       p.innerText = "Wake Lock was released";
+      requestWakeLock();
     });
     p.innerText = "Wake Lock is active";
   } catch (err) {

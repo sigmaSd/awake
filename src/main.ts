@@ -16,6 +16,8 @@ const requestWakeLock = async () => {
     p.innerText = "Wake Lock is active";
   } catch (err) {
     p.innerText = `error: ${err.name}, ${err.message}`;
+    await new Promise((r) => setTimeout(r, 500));
+    requestWakeLock();
   }
 };
 
